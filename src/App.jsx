@@ -4,22 +4,7 @@ import Navbar from "./components/Navbar";
 import CardRick from "./components/CardRick";
 
 function App() {
-  const array = [
-    {
-      titulo: "mouse gamer",
-      imagen:
-        "https://http2.mlstatic.com/D_NQ_NP_893511-MCO73780589735_012024-O.webp",
-      precio: 50000,
-    },
-    {
-      titulo: "Silla gamer",
-      imagen:
-        "https://www.tauretcomputadores.com/images/products/Product_20221110161325229045307.PL1000-Azul-1.webp",
-      precio: 2000000,
-    },
-  ];
 
-  const [numero, setNumero] = useState(0);
   const [nombre, setNombre] = useState(null);
   const [informacion, setInformacion] = useState(null);
 
@@ -55,6 +40,7 @@ function App() {
 
       <Navbar setNombre={setNombre} solicitud={solicitud} nombre={nombre} />
       <div className="flex flex-wrap">
+        {/* renderizado condicional cuando vean && */}
         {informacion &&
           informacion.results.map((elemento) => (
             <div>

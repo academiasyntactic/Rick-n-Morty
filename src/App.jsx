@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Card from "./components/Card";
 import Navbar from "./components/Navbar";
+import CardRick from "./components/CardRick";
 
 function App() {
   const array = [
@@ -27,7 +28,7 @@ function App() {
       `https://rickandmortyapi.com/api/character/?name=${nombre}`
     );
     const datos = await response.json();
-    console.log(datos);
+    setInformacion(datos);
   };
 
   return (
@@ -53,6 +54,14 @@ function App() {
       </div>
 
       <Navbar setNombre={setNombre} solicitud={solicitud} nombre={nombre} />
+      {informacion && informacion.results.map(
+        (elemento)=>(
+          <div>
+            <img className="rounded-full" src={elemento.image} alt="" />
+            <h1 className="text-white">{elemento.name}</h1>
+          </div>
+        )
+      )}
     </div>
   );
 }

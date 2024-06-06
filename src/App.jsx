@@ -54,14 +54,15 @@ function App() {
       </div>
 
       <Navbar setNombre={setNombre} solicitud={solicitud} nombre={nombre} />
-      {informacion && informacion.results.map(
-        (elemento)=>(
-          <div>
-            <img className="rounded-full" src={elemento.image} alt="" />
-            <h1 className="text-white">{elemento.name}</h1>
-          </div>
-        )
-      )}
+      <div className="flex flex-wrap">
+        {informacion &&
+          informacion.results.map((elemento) => (
+            <div>
+              <img className="rounded-full" src={elemento.image} alt="" />
+              <h1 className="text-white">{elemento.name}</h1>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }

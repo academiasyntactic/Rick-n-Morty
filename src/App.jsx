@@ -31,16 +31,12 @@ function App() {
             "https://www.tauretcomputadores.com/images/products/Product_20221110161325229045307.PL1000-Azul-1.webp"
           }
         />
-
-        <h1 className="text-white">El numero es igual a {numero} </h1>
-        <button className="text-white" onClick={() => setNumero(numero + 1)}>
-          Aumentar numero
-        </button>
       </div>
 
       <Navbar setNombre={setNombre} solicitud={solicitud} nombre={nombre} />
       <div className="flex flex-wrap">
-        {/* renderizado condicional cuando vean && */}
+
+        {informacion && (<h1 className="text-white">El numero de resultados es: {informacion.results.length}</h1>)}
         {informacion &&
           informacion.results.map((elemento) => (
             <div>
